@@ -12,9 +12,13 @@ inputs:
   issue_number:
     description: The number of the pull request.
     required: false
-  state:
-    description: 'The status of the check run: action_required, cancelled, failure, neutral, success, skipped, timed_out'
-    required: true
+  conclusion:
+    description: 'The conclusion of the check run: action_required, cancelled, failure, neutral, success, skipped, timed_out'
+    required: false
+  status:
+    description: 'The status of the check run: queued, in_progress, completed'
+    required: false
+    default: 'completed'
   name:
     description: 'This is displayed as the name of the check run'
     required: true

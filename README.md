@@ -26,12 +26,15 @@ jobs:
 | issue_number | No | The PR or Issue number where the check run will be introduced |
 | github_token | No | The Github token to be used |
 | name | Yes | This is displayed as the name of the check run |
-| state | Yes | The status of the check run: action_required, cancelled, failure, neutral, success, skipped, timed_out |
+| status | No | The status of the check run: queued, in_progress, completed |
+| conclusion | No | The conclusion of the check run: action_required, cancelled, failure, neutral, success, skipped, timed_out |
 | title | No | Short text explaining the check run |
 | summary | No | Long description of the check run |
 | target_url | No | The URL that will be linked in the check run |
 
 On default the issue `issue_number`, `repository` and `github_token` are infered from the context. If one of the parameters could't be infered the action will fail.
+
+When the status is completed the conclusion parameter is mandatory. When status is not provided it defaults to completed.
 
 ## Outputs
 Nothing.
