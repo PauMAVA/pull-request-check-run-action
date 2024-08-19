@@ -1,0 +1,37 @@
+name: 'Pull Request Check Run Action'
+description: 'Create or modify a check run on the latest commit of a PR.'
+inputs:
+  github_token:
+    description: A GitHub token.
+    required: false
+    default: ${{ github.token }}
+  repository:
+    description: The owner, slash repository name.
+    required: false
+    default: ${{ github.repository }}
+  issue_number:
+    description: The number of the pull request.
+    required: false
+  state:
+    description: 'The status of the check run: action_required, cancelled, failure, neutral, success, skipped, timed_out'
+    required: true
+  name:
+    description: 'This is displayed as the name of the check run'
+    required: true
+  title:
+    description: 'Short text explaining the check run'
+    default: ''
+    required: false
+  summary:
+    description: 'Long description of the check run'
+    default: ''
+    required: false
+  target_url:
+    description: 'URL/URI to use for further details.'
+    required: false
+runs:
+  using: 'node20'
+  main: 'dist/index.js'
+branding:
+  icon: check-circle
+  color: green
