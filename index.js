@@ -61,7 +61,7 @@ async function run() {
 
     const completedAt = new Date().toISOString();
     if (targetCheck === null) {
-        core.info(`Check run ${targetCheck.name} not found. Creating it...`);
+        core.info(`Check run ${targetName} not found. Creating it...`);
         await client.rest.checks.create({
             completed_at: completedAt,
             conclusion: state,
