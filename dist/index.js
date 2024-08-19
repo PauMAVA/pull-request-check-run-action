@@ -31145,7 +31145,7 @@ async function run() {
     ).data.check_runs;
 
     let targetCheck = null;
-    allChecks.array.forEach((checkRun) => {
+    allChecks.forEach((checkRun) => {
         let name = checkRun.name;
         if (name === targetName) {
             targetCheck = checkRun;
