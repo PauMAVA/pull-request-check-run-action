@@ -31155,7 +31155,7 @@ async function run() {
     const completedAt = new Date().toISOString();
     if (targetCheck === null) {
         core.info(`Check run ${targetCheck.name} not found. Creating it...`);
-        client.rest.checks.create({
+        await client.rest.checks.create({
             completed_at: completedAt,
             conclusion: state,
             details_url: targetURL,
@@ -31172,7 +31172,7 @@ async function run() {
         });
     } else {
         core.info(`Found check run ${targetCheck.name}. Modifiying it...`);
-        client.rest.checks.update({
+        await client.rest.checks.update({
           check_run_id: targetCheck.id,
           completed_at: completedAt,
           conclusion: state,
